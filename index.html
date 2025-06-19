@@ -18,19 +18,13 @@
     var map = L.map('map').setView([35.6895, 139.6917], 5); // 東京中心
 
     // モノクロスタイル（Carto Light）
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(map);
-
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 19
+}).addTo(map);
     // シンプルなグレー系マーカーアイコン
-    var grayIcon = L.icon({
-      iconUrl: 'https://cdn-icons-png.flaticon.com/512/64/64113.png', // グレーのピン
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32]
-    });
+L.marker([緯度, 経度], { icon: grayIcon }).addTo(map);
 
     // サンプル地点（追加可能）
     var places = [
